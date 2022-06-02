@@ -33,5 +33,48 @@ export default {
         })
     },
 
+    //课程信息确认
+    getPublishCourseInfo(id) {
+        return request({
+            url: `/eduservice/course/getPublishCourseInfo/` + id,
+            method: 'get',
+        })
+    },
+
+    //课程发布
+    publishCourse(id) {
+        return request({
+            url: `/eduservice/course/publishCourse/` + id,
+            method: 'post',
+        })
+    },
+
+    //查询课程信息带分页
+    getPageList(page, limit, searchObj) {
+        return request({
+            url: `/eduservice/course/${page}/${limit}`,
+            method: 'get',
+            params: searchObj
+        })
+    },
+
+
+    //删除课程
+    removeById(id) {
+        return request({
+            url: `/eduservice/course/${id}`,
+            method: 'delete'
+        })
+    },
+
+    //删除视频
+    deleteALYVideo(id) {
+        return request({
+            url: `/eduvod/video/removeALYVideo/${id}`,
+            method: 'delete'
+        })
+    },
+
+
 }
 
